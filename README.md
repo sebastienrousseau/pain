@@ -1,6 +1,6 @@
 # pain
 
-Quantum-Resistant Cryptographic Hash Library for Password Hashing and Verification in Rust 🦀
+A Rust library to manage ISO 20022 pain.001 payment initiation messages widely used for corporate to bank payments.
 
 [![Made With Love][made-with-rust]][6]
 [![Crates.io][crates-badge]][8]
@@ -29,85 +29,22 @@ Quantum-Resistant Cryptographic Hash Library for Password Hashing and Verificati
 
 ## Overview 📖
 
-The Hash (pain) library is a cryptographic hash library for password
-hashing and verification in Rust, based on the `argon2rs` crate.
+Payment Initiation (PI) is a library that provides a set of structs
+and enums that can be used to serialize and deserialize SEPA payment
+information using the `serde` library.
 
-This library is designed to provide robust security for passwords,
-utilizing the latest advancements in quantum-resistant cryptography.
+The structs include Payment, OriginalGroupInfoAndStatus, PaymentInfo,
+PaymentTypeInfo, ServiceLevel, Debtor, PostalAddress, DebtorAccount,
+AccountId, DebtorAgent, FinancialInstitutionId,
+CreditTransferTransactionInfo, PaymentId, Amount, InstructedAmount,
+Creditor, CreditorAccount, RemittanceInfo, and CreditorAgent.
 
-It is based on the `argon2rs` crate. The library implements a struct
-named `Hash` that provides various methods for password hash
-generation, retrieval, and verification.
+The enum is PaymentFormat and has four variants: Pain001_001_02,
+Pain001_001_03, Pain001_001_04, and Pain001_001_05.
 
 ## Features ✨
 
-### Hash Struct
-
-The `Hash` struct has three fields:
-
-- `password`: A string that stores the plaintext password.
-- `hash`: A vector of bytes that stores the hashed password.
-- `salt`: A vector of bytes that stores the salt used for password
-  hashing.
-
-### Hash Methods
-
-The `Hash` structure provides the following methods for password hashing
-and verification:
-
-- `generate_hash`: A static method that generates a hash from a
-  plaintext password and salt.
-- `hash`: A method that returns the hash as a slice of bytes.
-- `salt`: A method that returns the salt as a slice of bytes.
-- `hash_length`: A method that returns the length of the hash.
-- `new`: A constructor method that creates a new `Hash` struct instance
-  with the given plaintext password and salt.
-- `password`: A method that returns the password as a string.
-- `password_length`: A method that returns the length of the password.
-- `set_password`: A method that sets a new password and generates a new
-  hash.
-- `set_hash`: A method that sets a new hash.
-- `set_salt`: A method that sets a new salt.
-- `from_hash`: A method that creates a `Hash` struct instance from a
-  given hash.
-- `verify`: A method that verifies a plaintext password against the
-  stored hash.
-- `to_string_representation`: A method that returns the hash as a
-  string.
-
-### Traits
-
-The `Hash` struct also implements the following traits:
-
-- `FromStr`: Allows the `Hash` struct to be converted from a string.
-- `std::fmt::Display`: Allows the `Hash` struct to be printed as a
-  string.
-
-### Macros
-
-The library also provides several macros for common operations on the
-`Hash` struct:
-
-- `password_length`: Returns the length of the password for a given
-  `Hash` struct instance.
-- `set_hash`: Sets a new hash value for a given `Hash` struct instance.
-- `set_password`: Sets a new password and salt value for a given `Hash`
-  struct instance.
-- `set_salt`: Sets a new salt value for a given `Hash` struct instance.
-- `generate_hash`: Generates a new hash for a given password and salt.
-- `verify_password`: Verifies if the password matches the hash of a
-  given `Hash` struct instance.
-- `new_hash`: Creates a new instance of the `Hash` struct with the given
-  password and salt.
-- `display_hash`: Prints the hash of a given `Hash` struct instance to
-  the console.
-- `to_string`: Converts a given `Hash` struct instance to a string.
-
-### Security and Performance
-
-It is important to note that the library uses the `argon2rs` crate for
-password hashing, which is a secure and quantum-resistant password
-hashing library.
+Coming soon...
 
 ## Installation 📦
 
@@ -130,7 +67,7 @@ To use `pain` in your project, add the following to your
 
 ```toml
 [dependencies]
-pain = "0.0.2"
+pain = "0.0.1"
 ```
 
 Add the following to your `main.rs` file:
@@ -144,7 +81,7 @@ then you can use the functions in your application code.
 
 ### Examples
 
-`HRC` comes with a set of examples that you can use to get started. The
+`PAIN` comes with a set of examples that you can use to get started. The
 examples are located in the `examples` directory of the project. To run
 the examples, clone the repository and run the following command in your
 terminal from the project root directory.
@@ -156,7 +93,7 @@ cargo run --example pain
 ## Semantic Versioning Policy 🚥
 
 For transparency into our release cycle and in striving to maintain
-backward compatibility, `QRC` follows [semantic versioning][7].
+backward compatibility, `PAIN` follows [semantic versioning][7].
 
 ## License 📝
 
@@ -193,7 +130,7 @@ lot of useful suggestions on how to improve this project.
 [9]: https://docs.rs/pain
 [10]: https://lib.rs/crates/pain
 
-[banner]: https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/pain/banners/banner-pain-1597x377.svg "pain Banner"
+[banner]: https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/pain/banners/banner-pain-1597x377.svg "Pain Banner"
 [crates-badge]: https://img.shields.io/crates/v/pain.svg?style=for-the-badge 'Crates.io'
 [divider]: https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/elements/divider.svg "divider"
 [docs-badge]: https://img.shields.io/docsrs/pain.svg?style=for-the-badge 'Docs.rs'
