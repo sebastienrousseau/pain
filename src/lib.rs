@@ -94,7 +94,7 @@
 //!
 //! - `country`: The country of the address.
 //! - `address_line`: The lines of the address.
-//! //!
+//!
 //! # DebtorAccount
 //!
 //! The `DebtorAccount` struct contains information about the debtor's account. It has the following fields:
