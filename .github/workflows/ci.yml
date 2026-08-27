@@ -1,0 +1,33 @@
+# Unified CI pipeline.
+#
+# This repository had no CI: the only workflow present was a release
+# workflow, disabled by renaming it to `rust.back`. Nothing gated `main`,
+# which is how a clippy failure and an unresolvable dependency both sat
+# on the default branch unnoticed.
+
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - "feat/**"
+      - "fix/**"
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: Rust CI
+    uses: sebastienrousseau/pipelines/.github/workflows/rust-ci.yml@main
+    with:
+      rust-version: 'stable'
+      run-clippy: true
+      run-fmt: true
+      run-audit: true
+    secrets: inherit
