@@ -4,7 +4,6 @@ mod tests {
     use pain::*;
 
     extern crate serde;
-    extern crate serde_xml_rs;
 
     #[test]
     fn test_payment_format() {
