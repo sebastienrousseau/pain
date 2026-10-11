@@ -9,7 +9,7 @@ license = "MIT OR Apache-2.0"
 name = "pain"
 repository = "https://github.com/sebastienrousseau/pain/"
 rust-version = "1.66.1"
-version = "0.0.1"
+version = "0.0.2"
 include = [
     "../../LICENSE-APACHE",
     "../../LICENSE-MIT",
@@ -32,9 +32,6 @@ debug = true
 
 [dependencies]
 serde = { version = "1.0.152", features = ["derive"] }
-serde-xml-rs = "0.8.2"
-serde_json = "1.0.93"
-xml-rs = "1.0.0"
 
 [dev-dependencies]
 criterion = "0.8.0"
